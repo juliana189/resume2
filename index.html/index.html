@@ -11,28 +11,87 @@
   <meta property="og:url" content="https://juliana189.github.io/resume2/" />
   <meta name="theme-color" content="#0ea5e9" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Juliana Bogarín Rentería",
-    "jobTitle": "B.S. Aeronautical Engineering Candidate",
-    "url": "https://juliana189.github.io/resume2/",
-    "email": "mailto:julianabogr@gmail.com",
-    "sameAs": [
-      "https://github.com/juliana189",
-      "https://www.linkedin.com/in/juliana-bogarin-renteria-748aa6376/"
-    ],
-    "worksFor": {
-      "@type": "CollegeOrUniversity",
-      "name": "Instituto Tecnológico de Hermosillo"
-    },
-    "knowsAbout": ["Aeronautical Engineering", "SolidWorks", "CAD", "Fluid Dynamics"]
-  }
-  </script>
-
   <style>
-    /* same CSS as before (omitted here for brevity) */
+    :root {
+      --bg: #0b0c0f;
+      --surface: #111318;
+      --text: #e7e9ee;
+      --muted: #a7b0bf;
+      --primary: #0ea5e9;
+      --accent: #22c55e;
+      --chip: rgba(255,255,255,0.06);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --primary: #0284c7;
+        --accent: #16a34a;
+        --chip: rgba(15,23,42,0.06);
+      }
+    }
+    body {
+      margin: 0;
+      font: 400 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(14,165,233,0.15), transparent 50%),
+                  radial-gradient(900px 600px at 120% 10%, rgba(34,197,94,0.12), transparent 50%),
+                  var(--bg);
+    }
+    .page {
+      max-width: 980px;
+      margin: 32px auto 64px;
+      padding: 0 20px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+      padding: 24px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: sticky; top: 16px; z-index: 10;
+    }
+    .id { display: grid; gap: 6px; }
+    .name { font-size: 28px; font-weight: 800; }
+    .role { font-size: 16px; color: var(--muted); }
+    .contact { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid color-mix(in oklab, var(--text), transparent 85%);
+      text-decoration: none; color: inherit;
+    }
+    .chip:hover { border-color: var(--primary); }
+    main { margin-top: 28px; display: grid; gap: 18px; }
+    section {
+      background: var(--surface);
+      border: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+    h2 { margin: 0 0 12px; font-size: 18px; text-transform: uppercase; font-weight: 700; }
+    .summary { color: var(--muted); }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills .tag { padding: 6px 10px; border-radius: 10px; background: var(--chip); border: 1px solid color-mix(in oklab, var(--text), transparent 85%); font-size: 14px; }
+    .item { display: grid; gap: 6px; padding: 14px 0; border-top: 1px dashed color-mix(in oklab, var(--text), transparent 85%); }
+    .item:first-child { border-top: 0; padding-top: 0; }
+    .item .top { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: baseline; }
+    .item .title { font-weight: 700; font-size: 16px; }
+    .item .meta { color: var(--muted); font-size: 14px; }
+    ul { margin: 6px 0 0 18px; }
+    .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } header { grid-template-columns: 1fr; } .contact { justify-content: flex-start; } }
+    .cta-bar { position: fixed; right: 16px; bottom: 16px; display: flex; gap: 10px; }
+    .btn { padding: 10px 14px; border-radius: 12px; border: 1px solid color-mix(in oklab, var(--text), transparent 85%); background: var(--surface); color: var(--text); font-weight: 600; cursor: pointer; }
+    .btn:hover { border-color: var(--primary); }
   </style>
 </head>
 <body>
@@ -87,21 +146,15 @@
       <section>
         <h2>Projects</h2>
         <article class="item">
-          <div class="top">
-            <div class="title">Prototype Aircraft Wing</div>
-          </div>
+          <div class="top"><div class="title">Prototype Aircraft Wing</div></div>
           <p>Modeled a NACA 2412 airfoil in SolidWorks, fabricated steel test article, validated stiffness-to-weight ratio with 3-point testing.</p>
         </article>
         <article class="item">
-          <div class="top">
-            <div class="title">Agricultural Drone</div>
-          </div>
+          <div class="top"><div class="title">Agricultural Drone</div></div>
           <p>Designed a sustainable drone concept with recycled materials; fabricated 3D-printed prototype frame for evaluation.</p>
         </article>
         <article class="item">
-          <div class="top">
-            <div class="title">SafeZone – IoT Alarm</div>
-          </div>
+          <div class="top"><div class="title">SafeZone – IoT Alarm</div></div>
           <p>Co-designed alarm prototype for public spaces; handled requirements, CAD enclosure, and FMEA lite. Placed 2nd at Rally Latinoamericano de Innovación 2021.</p>
         </article>
       </section>
@@ -157,4 +210,3 @@
   </div>
 </body>
 </html>
-<!-- rebuild -->
