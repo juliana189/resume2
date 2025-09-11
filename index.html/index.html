@@ -1,276 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Juliana Bogarín – Resume</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juliana Bogarín | Portfolio</title>
   <style>
-    :root {
-      --primary: #81007F;
-      --secondary: #FFB400;
-      --gray-dark: #374151;
-      --gray-light: #F3F4F6;
-      --text: #1F2937;
-      --bg: #ffffff;
-    }
-
     body {
+      font-family: 'Georgia', serif;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 22%;
-      background: var(--primary);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    .sidebar img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid var(--secondary);
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-
-    .sidebar .name {
-      font-family: 'EB Garamond', serif;
-      font-size: 28px;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 6px;
-    }
-
-    .sidebar .role {
-      font-size: 15px;
-      text-align: center;
-      margin-bottom: 25px;
-      opacity: 0.9;
-    }
-
-    .sidebar nav {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      font-size: 14px;
-      width: 100%;
-    }
-
-    .sidebar nav a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-    .sidebar nav a:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
-    /* Main content */
-    .content {
-      margin-left: 22%;
-      padding: 50px 60px;
-      flex: 1;
-      background: var(--gray-light);
-    }
-
-    section {
-      margin-bottom: 50px;
-      padding: 30px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      font-family: 'EB Garamond', serif;
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: var(--primary);
-      border-bottom: 2px solid var(--secondary);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
-
-    p, li {
-      font-size: 15px;
+      background: #ffffff;
+      color: #2c3e50;
       line-height: 1.6;
-      color: var(--gray-dark);
     }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: #1a1a1a;
+      color: white;
+      border-bottom: 5px solid #c0a062;
     }
-
-    .skills span {
-      background: var(--gray-light);
-      color: var(--primary);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      border: 1px solid var(--primary);
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 600;
     }
-
+    header p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0 1rem;
+      color: #d5d5d5;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #c0a062;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    .section {
+      padding: 2.5rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 1.5rem;
     }
-
-    .projects .item {
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e5e7eb;
+    .card {
       background: #fafafa;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .projects .item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     }
-    .projects .item strong {
-      display: block;
-      font-size: 17px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .projects .item a {
-      display: inline-block;
-      margin-top: 6px;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-    }
-    .projects .item a:hover {
-      text-decoration: underline;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: var(--primary);
-      color: white;
-      border-radius: 6px;
+    .card h3 a {
+      color: #2c3e50;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
     }
-    .btn:hover { background: var(--secondary); }
-
-    @media (max-width: 900px) {
-      body { flex-direction: column; }
-      .sidebar { position: relative; width: 100%; flex-direction: row; justify-content: center; border-right: none; padding: 20px; }
-      .content { margin-left: 0; padding: 20px; }
+    .card h3 a:hover {
+      color: #c0a062;
+    }
+    .skills {
+      text-align: center;
+    }
+    .skills span {
+      display: inline-block;
+      background: #f2f2f2;
+      margin: 6px;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    #contact p {
+      text-align: center;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    #contact a {
+      color: #c0a062;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    #contact a:hover {
+      color: #1a1a1a;
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <img src="files/profile-pic.jpg" alt="Profile Picture" />
-    <div class="name">Juliana Bogarín</div>
-    <div class="role">Aeronautical Engineering Student</div>
+  <header>
+    <h1>Juliana Bogarín</h1>
+    <p>Aeronautical Engineering Student | Aspiring Composites Researcher</p>
     <nav>
-      <a href="mailto:julianabogr@gmail.com">✉ julianabogr@gmail.com</a>
-      <a href="tel:+526221628352">📞 (622) 162-8352</a>
-      <a href="https://github.com/juliana189" target="_blank">💻 github.com/juliana189</a>
-      <a href="https://www.linkedin.com/in/juliana-bogarin-renteria-748aa6376/" target="_blank">🔗 LinkedIn</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </div>
+  </header>
 
-  <div class="content">
-    <section>
-      <h2>Summary</h2>
-      <p>I am passionate about contributing to technological advancement in aerospace, with a particular interest in composite manufacturing within the industry, maximizing performance but also achieving costs and weight reduction through sustainable and innovative solutions. I aim to grow as an engineer by learning from industry professionals, applying my academic background, and leveraging my soft skills to address real-world challenges.</p>
-    </section>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p style="max-width: 750px; margin: auto; text-align: center; font-size: 1rem;">
+      I am passionate about contributing to technological advancement in aerospace, with a particular interest in composite manufacturing within the industry, maximizing performance but also achieving costs and weight reduction through sustainable and innovative solutions. I aim to grow as an engineer by learning from industry professionals, applying my academic background, and leveraging my soft skills to address real-world challenges.
+    </p>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="item">
-          <strong>Prototype Aircraft Wing</strong>
-          <p>Modeled NACA 2412 airfoil in SolidWorks; fabricated steel test article; validated stiffness-to-weight ratio.</p>
-          <a href="files/prototype-wing-report.pdf" target="_blank">View Report</a>
-          <a href="files/prototype-wing-calculations.xlsx" target="_blank">Excel Calculations</a>
-          <a href="files/prototype-wing-model.sldprt" target="_blank">SolidWorks Part</a>
-        </div>
-        <div class="item">
-          <strong>Agricultural Drone</strong>
-          <p>Designed a sustainable drone with recycled materials; fabricated 3D-printed prototype frame.</p>
-          <a href="files/agricultural-drone-report.pdf" target="_blank">View Report</a>
-          <a href="files/agricultural-drone-calculations.xlsx" target="_blank">Excel Calculations</a>
-          <a href="files/agricultural-drone-model.sldprt" target="_blank">SolidWorks Part</a>
-        </div>
-        <div class="item">
-          <strong>SafeZone – IoT Alarm</strong>
-          <p>Co-designed alarm prototype for public spaces; placed 2nd at Rally Latinoamericano de Innovación 2021.</p>
-          <a href="files/safezone-docs.pdf" target="_blank">View Report</a>
-          <a href="files/safezone-calculations.xlsx" target="_blank">Excel Calculations</a>
-          <a href="files/safezone-model.sldprt" target="_blank">SolidWorks Part</a>
-        </div>
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3><a href="https://github.com/yourusername/project1">Project 1</a></h3>
+        <p>Short description of what it does.</p>
+        <p><strong>Tech:</strong> Python, MATLAB</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Aerodynamics</span>
-        <span>Propulsion</span>
-        <span>Composite Manufacturing</span>
-        <span>Spanish</span>
-        <span>English</span>
-        <span>French</span>
+      <div class="card">
+        <h3><a href="https://github.com/yourusername/project2">Project 2</a></h3>
+        <p>Short description of what it does.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JS</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Experience</h2>
-      <p><strong>Customer Service Agent – Telvista</strong> (Dec 2020 – May 2021, Remote)<br>
-      Delivered technical support for METRO by T-Mobile users across 100+ products and services.</p>
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>MATLAB</span>
+      <span>HTML/CSS</span>
+      <span>SolidWorks</span>
+      <span>Teamwork</span>
+    </div>
+  </section>
 
-      <p><strong>Administrative Assistant – VSH Seguridad</strong> (Jan 2020 – Jun 2020, Guaymas, SON)<br>
-      Developed and managed Excel tracking systems; coordinated schedules and documentation.</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <p><strong>Aeronautical Engineering Student – Instituto Tecnológico de Hermosillo</strong><br>
-      Expected Graduation: Jun 2026</p>
-    </section>
-
-    <section>
-      <h2>Awards & Extras</h2>
-      <ul>
-        <li>2nd Place – Rally Latinoamericano de Innovación (2021)</li>
-        <li>Languages: Spanish (Native), English (Advanced), French (Conversational)</li>
-        <li>Interests: Sustainable Aviation, Aerospace Tech, Cinematography</li>
-      </ul>
-    </section>
-
-    <a class="btn" href="#" onclick="window.print()">Print / Save PDF</a>
-  </div>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></p>
+  </section>
 </body>
 </html>
