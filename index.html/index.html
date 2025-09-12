@@ -53,28 +53,51 @@
     }
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-    .card {
+    .project-block {
+      text-align: center;
+      padding: 1rem;
       background: #fafafa;
-      padding: 1.5rem;
       border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 6px;
+      max-width: 700px;
+      margin: auto;
     }
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    .project-block h3 {
+      margin-bottom: 0.75rem;
+      color: #1a1a1a;
     }
-    .card h3 a, .card h3 {
-      color: #2c3e50;
+    .project-block a, .project-block video, .project-block img.file-icon {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.75rem;
+      background: #f2f2f2;
+      border-radius: 6px;
       text-decoration: none;
+      color: #2c3e50;
       font-weight: 600;
+      transition: background 0.3s, color 0.3s;
     }
-    .card h3 a:hover {
-      color: #c0a062;
+    .project-block a:hover {
+      background: #c0a062;
+      color: #fff;
+    }
+    .project-block img.preview, .project-block video {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .file-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .file-links a {
+      flex: 1 1 auto;
+      min-width: 150px;
     }
     .skills {
       text-align: center;
@@ -106,7 +129,7 @@
 <body>
   <header>
     <h1>Juliana Bogarín</h1>
-    <p>Aerospace Engineering Student | Aspiring Composites Researcher</p>
+    <p>Aeronautical Engineering Student | Aspiring Composites Researcher</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -125,22 +148,36 @@
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="projects">
-      <div class="card">
-        <h3>Composite Wing Study</h3>
-        <p>Analysis of composite wing structures with performance and cost optimization.</p>
-        <p><strong>Tech:</strong> SolidWorks, Excel</p>
-        <p>
-          <a href="projects/wing-structure.SLDPRT" download>Download CAD Model</a><br>
-          <a href="projects/wing-data.xlsx">View Data Sheet</a> | <a href="projects/wing-data.xlsx" download>Download</a>
-        </p>
+      <!-- Prototype Aircraft Wing -->
+      <div class="project-block">
+        <h3>Prototype Aircraft Wing</h3>
+        <img src="projects/airfoil.jpeg" alt="Prototype Aircraft Wing" class="preview">
+        <div class="file-links">
+          <a href="projects/airfoil.SLDPRT" download>🛠️ Download CAD Model</a>
+          <a href="projects/airfoil-calculations.xlsx">📊 View Data Sheet</a>
+          <a href="projects/airfoil-calculations.xlsx" download>📊 Download Data Sheet</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Project 2</h3>
-        <p>Short description of what it does.</p>
-        <p><strong>Tech:</strong> Python, MATLAB</p>
-        <p>
-          <a href="projects/project2-report.pdf">View Report</a> | <a href="projects/project2-report.pdf" download>Download</a>
-        </p>
+
+      <!-- Agricultural Drone -->
+      <div class="project-block">
+        <h3>Agricultural Drone</h3>
+        <div class="file-links">
+          <a href="projects/drone-report.pdf">📄 View Report</a>
+          <a href="projects/drone-report.pdf" download>📄 Download Report</a>
+        </div>
+      </div>
+
+      <!-- SafeZone IoT Alarm -->
+      <div class="project-block">
+        <h3>SafeZone IoT Alarm Prototype</h3>
+        <video controls poster="projects/safezone-thumbnail.jpg">
+          <source src="projects/safezone.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="file-links">
+          <a href="projects/safezone.mp4" download>🎥 Download Video</a>
+        </div>
       </div>
     </div>
   </section>
