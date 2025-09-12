@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juliana Bogarín | Portfolio</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      background: #ffffff;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: #1a1a1a;
+      color: white;
+      border-bottom: 5px solid #c0a062;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0 1rem;
+      color: #d5d5d5;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #c0a062;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    .section {
+      padding: 2.5rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .project-block {
+      text-align: center;
+      padding: 1rem;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .project-block h3 {
+      margin-bottom: 0.75rem;
+      color: #1a1a1a;
+    }
+    .project-block a, .project-block video, .project-block img.file-icon {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.75rem;
+      background: #f2f2f2;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+    .project-block a:hover {
+      background: #c0a062;
+      color: #fff;
+    }
+    .project-block img.preview, .project-block video {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .file-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .file-links a {
+      flex: 1 1 auto;
+      min-width: 150px;
+    }
+    .skills {
+      text-align: center;
+    }
+    .skills span {
+      display: inline-block;
+      background: #f2f2f2;
+      margin: 6px;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    #contact p {
+      text-align: center;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    #contact a {
+      color: #c0a062;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    #contact a:hover {
+      color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Juliana Bogarín</h1>
+    <p>Aeronautical Engineering Student | Aspiring Composites Researcher</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p style="max-width: 750px; margin: auto; text-align: center; font-size: 1rem;">
+      I am passionate about contributing to technological advancement in aerospace, with a particular interest in composite manufacturing within the industry, maximizing performance but also achieving costs and weight reduction through sustainable and innovative solutions. I aim to grow as an engineer by learning from industry professionals, applying my academic background, and leveraging my soft skills to address real-world challenges.
+    </p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <!-- Prototype Aircraft Wing -->
+      <div class="project-block">
+        <h3>Prototype Aircraft Wing</h3>
+        <img src="projects/airfoil.jpeg" alt="Prototype Aircraft Wing" class="preview">
+        <div class="file-links">
+          <a href="projects/airfoil.SLDPRT" download>🛠️ Download CAD Model</a>
+          <a href="projects/airfoil-calculations.xlsx">📊 View Data Sheet</a>
+          <a href="projects/airfoil-calculations.xlsx" download>📊 Download Data Sheet</a>
+        </div>
+      </div>
+
+      <!-- Agricultural Drone -->
+      <div class="project-block">
+        <h3>Agricultural Drone</h3>
+        <div class="file-links">
+          <a href="projects/drone-report.pdf">📄 View Report</a>
+          <a href="projects/drone-report.pdf" download>📄 Download Report</a>
+        </div>
+      </div>
+
+      <!-- SafeZone IoT Alarm -->
+      <div class="project-block">
+        <h3>SafeZone IoT Alarm Prototype</h3>
+        <video controls poster="projects/safezone-thumbnail.jpg">
+          <source src="projects/safezone.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="file-links">
+          <a href="projects/safezone.mp4" download>🎥 Download Video</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>MATLAB</span>
+      <span>HTML/CSS</span>
+      <span>SolidWorks</span>
+      <span>Teamwork</span>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a></p>
+  </section>
+</body>
+</html>
